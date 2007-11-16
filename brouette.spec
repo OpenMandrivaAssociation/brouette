@@ -1,7 +1,7 @@
 Summary:        Gets notifications from the prelude manager
 Name:           brouette
 Version:        0.1
-Release:        %mkrel 0.10045.2
+Release:        %mkrel 0.10045.3
 Epoch:          0
 License:        GPL
 Group:          System/Servers
@@ -18,7 +18,6 @@ Brouette gets notifications from the prelude manager.
 %prep
 %setup -q -n %{name}
 %{_bindir}/find . -type d -name .svn | %{_bindir}/xargs %{__rm} -r
-./autogen.sh
 
 %{__cat} > README.urpmi << EOF
 In order to start the brouette service you must configure it first.
@@ -33,6 +32,10 @@ Then run:
 
 at desktop startup.
 EOF
+
+%{__perl} -pi -e 's/^address=.*/address=localhost/' brouette.conf
+
+./autogen.sh
 
 %build
 %{configure2_5x}
