@@ -1,7 +1,7 @@
 Summary:        Gets notifications from the prelude manager
 Name:           brouette
 Version:        0.1
-Release:        %mkrel 0.10045.1
+Release:        %mkrel 0.10045.2
 Epoch:          0
 License:        GPL
 Group:          System/Servers
@@ -50,5 +50,5 @@ EOF
 %doc AUTHORS COPYING ChangeLog INSTALL NEWS README README.urpmi doc/*
 %attr(0755,root,root) %{_bindir}/brouette
 %{_datadir}/brouette
-%dir %{_sysconfdir}/brouette/brouette.conf
+%dir %{_sysconfdir}/brouette
 %config(noreplace) %{_sysconfdir}/brouette/brouette.conf
