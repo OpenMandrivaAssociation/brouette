@@ -1,14 +1,14 @@
 Summary:        Gets notifications from the prelude manager
 Name:           brouette
-Version:        0.0
-Release:        %mkrel 0.8575.1
+Version:        0.1
+Release:        %mkrel 0.10045.1
 Epoch:          0
 License:        GPL
 Group:          System/Servers
 URL:            http://www.prelude-ids.org/
-Source0:        brouette-8575.tar.bz2
+Source0:        brouette-10045.tar.bz2
 BuildRequires:  libnotify-devel
-BuildRequires:  libprelude-devel >= 0:0.9.10
+BuildRequires:  prelude-devel
 Requires:       prelude-manager
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
@@ -17,15 +17,8 @@ Brouette gets notifications from the prelude manager.
 
 %prep
 %setup -q -n %{name}
-%{_bindir}/find . -type d -name .svn | %{_bindir}/xargs %{__rm} -rf
-
-%build
-%{make} CC=%{__cc} CFLAGS="%{optflags} `%{_bindir}/libprelude-config --cflags` `%{_bindir}/pkg-config libnotify --cflags`"
-
-%install
-%{__rm} -rf %{buildroot}
-%{__mkdir_p} %{buildroot}%{_bindir}
-%{__cp} -a brouette %{buildroot}%{_bindir}/brouette
+%{_bindir}/find . -type d -name .svn | %{_bindir}/xargs %{__rm} -r
+./autogen.sh
 
 %{__cat} > README.urpmi << EOF
 In order to start the brouette service you must configure it first.
@@ -41,12 +34,21 @@ Then run:
 at desktop startup.
 EOF
 
+%build
+%{configure2_5x}
+%{make}
+
+%install
+%{__rm} -rf %{buildroot}
+%{makeinstall_std}
+
 %clean
 %{__rm} -rf %{buildroot}
 
 %files
 %defattr(0644,root,root,0755)
-%doc INSTALL README README.urpmi doc/foobar.jpg
+%doc AUTHORS COPYING ChangeLog INSTALL NEWS README README.urpmi doc/*
 %attr(0755,root,root) %{_bindir}/brouette
-
-
+%{_datadir}/brouette
+%dir %{_sysconfdir}/brouette/brouette.conf
+%config(noreplace) %{_sysconfdir}/brouette/brouette.conf
