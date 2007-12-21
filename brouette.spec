@@ -10,6 +10,7 @@ Source0:        brouette-10045.tar.bz2
 BuildRequires:  libnotify-devel
 BuildRequires:  prelude-devel
 Requires:       prelude-manager
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 Brouette gets notifications from the prelude manager.
