@@ -1,9 +1,9 @@
 Summary:        Gets notifications from the prelude manager
 Name:           brouette
 Version:        0.1
-Release:        %mkrel 0.10045.3
+Release:        %mkrel 0.10045.4
 Epoch:          0
-License:        GPL
+License:        GPLv2+
 Group:          System/Servers
 URL:            http://www.prelude-ids.org/
 Source0:        brouette-10045.tar.bz2
