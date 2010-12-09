@@ -1,7 +1,7 @@
 Summary:        Gets notifications from the prelude manager
 Name:           brouette
 Version:        0.1
-Release:        %mkrel 0.10045.5
+Release:        %mkrel 0.10045.6
 Epoch:          0
 License:        GPLv2+
 Group:          System/Servers
