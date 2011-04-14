@@ -1,12 +1,13 @@
 Summary:        Gets notifications from the prelude manager
 Name:           brouette
 Version:        0.1
-Release:        %mkrel 0.10045.6
+Release:        %mkrel 0.10045.7
 Epoch:          0
 License:        GPLv2+
 Group:          System/Servers
 URL:            http://www.prelude-ids.org/
 Source0:        brouette-10045.tar.bz2
+Patch0:		brouette-10045-libnotify.patch
 BuildRequires:  libnotify-devel
 BuildRequires:  prelude-devel
 Requires:       prelude-manager
@@ -17,6 +18,7 @@ Brouette gets notifications from the prelude manager.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p0
 %{_bindir}/find . -type d -name .svn | %{_bindir}/xargs %{__rm} -r
 
 %{__cat} > README.urpmi << EOF
