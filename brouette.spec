@@ -10,7 +10,7 @@ Source0:        brouette-10045.tar.bz2
 Patch0:		brouette-10045-libnotify.patch
 BuildRequires:  libnotify-devel
 BuildRequires:  prelude-devel
-BuildRequires:	gtk+2.0-devel
+BuildRequires:	gtk+2-devel
 Requires:       prelude-manager
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
