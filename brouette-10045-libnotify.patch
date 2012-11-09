@@ -1,0 +1,11 @@
+--- alert-callback.c.libnotify	2011-04-14 12:08:14.000000000 +0200
++++ alert-callback.c	2011-04-14 12:08:26.000000000 +0200
+@@ -57,7 +57,7 @@
+ 
+         n = notify_notification_new (header,
+                                      body,
+-                                     icon, NULL); 
++                                     icon); 
+         notify_notification_set_timeout (n, 3000); //3 seconds
+ 
+         if (!notify_notification_show (n, NULL)) {
