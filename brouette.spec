@@ -5,7 +5,7 @@ Release:        %mkrel 0.10045.7
 Epoch:          0
 License:        GPLv2+
 Group:          System/Servers
-URL:            http://www.prelude-ids.org/
+URL:            https://www.prelude-ids.org/
 Source0:        brouette-10045.tar.bz2
 Patch0:		brouette-10045-libnotify.patch
 BuildRequires:  libnotify-devel
