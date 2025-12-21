@@ -8,6 +8,7 @@ Group:          System/Servers
 URL:            https://www.prelude-ids.org/
 Source0:        brouette-10045.tar.bz2
 Patch0:		brouette-10045-libnotify.patch
+BuildRequires:	make
 BuildRequires:  libnotify-devel
 BuildRequires:  prelude-devel
 BuildRequires:	gtk+2-devel
